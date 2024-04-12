@@ -1,0 +1,70 @@
+.button {
+  --button-color: var(--color-primary-main);
+  --button-text-color: var(--color-primary-contrast);
+  --button-hover-color: color-mix(in srgb, var(--button-color), var(--core-content-background-100) 10%);
+  --button-active-color: color-mix(in srgb, var(--button-color), var(--core-content-background-100) 20%);
+
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.35rem 0.875rem;
+  margin: 0;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: 2px solid var(--button-color);
+  border-radius: 2rem;
+
+  & .button__text {
+    font-size: 0.875rem;
+  }
+
+  & > svg {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: currentColor;
+  }
+
+  &:hover {
+    background-color: var(--button-hover-color);
+  }
+
+  &:active {
+    background-color: var(--button-active-color);
+  }
+
+  &.button--icon-only {
+    padding: max(0.6vh, 0.4rem);
+  }
+
+  &.button--secondary {
+    background-color: transparent;
+    color: var(--button-color);
+
+    &:hover {
+      background-color: var(--button-hover-color);
+      color: var(--button-text-color);
+    }
+
+    &:active {
+      background-color: var(--button-active-color);
+      color: var(--button-text-color);
+    }
+  }
+
+  &.button--tertiary {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--core-text-color);
+
+    &:hover {
+      background-color: transparent;
+      color: color-mix(in srgb, var(--core-text-color), var(--core-content-background-100) 10%);
+    }
+
+    &:active {
+      background-color: transparent;
+      color: color-mix(in srgb, var(--core-text-color), var(--core-content-background-100) 20%);
+    }
+  }
+}
