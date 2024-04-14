@@ -14,7 +14,19 @@ const exampleData = [
     name: "Bolognese",
     description:
       "A sweet and tomatoey bolognese containing beef and pork mince, courgette, peppers, red onions and assorted seasoning.",
-    price: 20,
+    price: 14,
+  },
+  {
+    name: "Soup Of The Day",
+    description:
+      "Vegetable soup with buttered bread on the side.",
+    price: 8,
+  },
+  {
+    name: "The Big One",
+    description:
+      "A 12oz prime cut steak with home style skin on fries, onion rings and coleslaw.",
+    price: 35,
   },
 ];
 
@@ -24,9 +36,15 @@ function App() {
   return (
     <ThemeWrapper value={"light"}>
       <div className={classList}>
-        <h1 className={mc("app__name")}>NAME</h1>
+        <h1 className={mc("app__name")}>EXAMPLE RESTAURANT</h1>
 
-        <MenuSection title="Example" items={exampleData} />
+        <div className={mc("app__grid")}>
+          <MenuSection title="Soups" items={exampleData} />
+
+          <MenuSection title="Pizzas" items={exampleData} />
+
+          <MenuSection title="Comfort" items={exampleData} />
+        </div>
       </div>
     </ThemeWrapper>
   );
